@@ -1,0 +1,2 @@
+python bot.pyw
+PAUSE
