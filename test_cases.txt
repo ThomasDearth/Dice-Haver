@@ -1,2 +1,0 @@
-test cases:
--target is greater than faces of the dice

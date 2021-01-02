@@ -1,2 +1,2 @@
-python bot.pyw
+python main.py
 PAUSE
