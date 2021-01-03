@@ -4,8 +4,6 @@ import discord
 from dotenv import load_dotenv
 import command_modules.roll
 
-print("1")
-
 # Imports Discord token without having it hardcoded into the program
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -51,5 +49,4 @@ async def on_message(message):
         else:
             await message.channel.send(cases.get(message.content.split(" ")[0])(clean(message.content), message.author))
 
-print("2")
 client.run(TOKEN)
