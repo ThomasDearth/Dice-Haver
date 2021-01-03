@@ -59,6 +59,11 @@ def roll_message_parse(message_content, message_author):
                     focus2 -= target_roll - rolls[pos]
                 pos += 1
             ret = ret + " rolled " + str(rolls) + ".\n`" + str(pos) + "` successes of difficulty `" + str(target_roll) + "`, using `" + str(focus) + "` focus."
+            if target_success_count > 0:
+                if pos >= target_success_count:
+                    ret = ret + "\nThe check succeeded!"
+                else:
+                    ret = ret + "\nThe check failed!"
         else:
             return "Error: the term \"fY\" requires a target value as well through `tX` or `X:Y` syntax. For help, type `!help`"
     else:
@@ -67,7 +72,7 @@ def roll_message_parse(message_content, message_author):
             dice_sum += roll
         ret = ret + " rolled `" + str(rolls) + "`.\n`" + str(dice_sum) + "` was the total."
 
-    return ret + "\nSuccesses required: " + str(target_success_count)
+    return ret
 
 # Returns an array of rolled dice, sorted from largest to smallest
 def roll_dice(count, faces):
