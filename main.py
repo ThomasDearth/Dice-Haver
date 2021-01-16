@@ -31,6 +31,7 @@ def github_link(message_content, message_author):
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='for !help'))
 
 # Activates whenever someone posts a message
 @client.event
